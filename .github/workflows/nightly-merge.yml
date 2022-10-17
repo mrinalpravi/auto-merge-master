@@ -13,13 +13,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-  
-    - name: Mark github workspace as safe
-      run: |
-          git config --global --add safe.directory '*'
 
     - name: Nightly Merge
-      uses: robotology/gh-action-nightly-merge@v1.3.0
+      uses: robotology/gh-action-nightly-merge@v1.3.2
       with:
         stable_branch: 'main'
         development_branch: 'first-commit'
