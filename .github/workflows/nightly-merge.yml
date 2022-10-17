@@ -21,4 +21,4 @@ jobs:
         development_branch: 'first-commit'
         allow_ff: false
       env:
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: ${{ secrets.DUMMY_TOKEN }}
