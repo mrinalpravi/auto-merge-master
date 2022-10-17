@@ -20,4 +20,7 @@ jobs:
         stable_branch: 'main'
         development_branch: 'first-commit'
         allow_ff: false
+      env:
+        USER_EMAIL: ${{secrets.USER_EMAIL }}
+        GITHUB_TOKEN: ${{ secrets.DUMMY_TOKEN }}
 
