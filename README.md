@@ -1,3 +1,2 @@
 # big-bang-theory
-demo repo
-updated therf 
+Demo repo to test Auto merge - actions
