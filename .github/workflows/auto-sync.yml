@@ -20,7 +20,11 @@ jobs:
         id: pull
         uses: tretuna/sync-branches@1.2.0
         with:
-          labels: automerge
           GITHUB_TOKEN: ${{secrets.DUMMY_TOKEN}}
           FROM_BRANCH: 'main'
           TO_BRANCH: 'feature'
+      - name: Label the pull request 
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: automerge
+          repo: ${{ github.repository }}
