@@ -1,2 +1,2 @@
 # auto-merge-master
-Testing Auto sync
+Testing Auto sync to feature
