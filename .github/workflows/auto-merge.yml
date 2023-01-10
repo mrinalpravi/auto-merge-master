@@ -1,0 +1,16 @@
+name: Check PR can be merged
+on:
+  pull_request:
+    branches:
+      - feature
+jobs:
+  handle-pr-for-http4k-upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Automatically Merge PR
+        uses: plm9606/automerge_actions@1.2.2
+        with:
+          reviewers-number: 0
+          merge-method: squash
+          auto-delete: true
+          github-token: ${{ secrets.DUMMY_TOKEN }}
