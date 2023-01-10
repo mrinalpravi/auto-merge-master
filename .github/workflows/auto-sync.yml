@@ -24,3 +24,9 @@ jobs:
           GITHUB_TOKEN: ${{secrets.DUMMY_TOKEN}}
           FROM_BRANCH: 'main'
           TO_BRANCH: 'feature'
+      - name: Label the pull request 
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: automerge
+          repo: ${{ github.repository }}
+          number: ${{ steps.pull.outputs.PULL_REQUEST_NUMBER }}
