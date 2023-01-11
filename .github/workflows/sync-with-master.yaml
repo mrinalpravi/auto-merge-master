@@ -1,3 +1,4 @@
+name: Merge Master to Feature Branch
 on:
   push:
     branches:
