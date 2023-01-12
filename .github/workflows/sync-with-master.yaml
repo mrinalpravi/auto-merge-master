@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build-version:
+  run-commands:
     runs-on: ubuntu-latest
     steps:
     - name: Git checkout
@@ -20,4 +20,3 @@ jobs:
         git config user.email "mrinalpr1998@gmail.com"
         git status
         git tag
-        git describe
