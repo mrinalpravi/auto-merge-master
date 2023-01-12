@@ -19,6 +19,8 @@ jobs:
         git config user.name "mrinalpravi"
         git config user.email "mrinalpr1998@gmail.com"
         git status
+        git fetch origin main
+        git pull
         git checkout feature
         git merge main
         git status
