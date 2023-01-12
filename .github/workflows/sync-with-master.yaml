@@ -19,4 +19,6 @@ jobs:
         git config user.name "mrinalpravi"
         git config user.email "mrinalpr1998@gmail.com"
         git status
-        git tag
+        git checkout feature
+        git merge master
+        git status
