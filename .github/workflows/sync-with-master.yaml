@@ -1,16 +1,27 @@
-name: Merge Master to Feature Branch
+name: Running Dummy Commands
+
 on:
   push:
-    branches:
-      - "main"
+    branches: [ main ]
+
 jobs:
-  merge-branch:
+  run-commands:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: everlytic/branch-merge@1.1.2
-        with:
-          github_token: ${{secrets.DUMMY_TOKEN}}
-          source_ref: ${{ github.ref }}
-          target_branch: 'feature'
-          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+    - name: Git checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+        github_token: ${{secrets.DUMMY_TOKEN}}
+    - name: git
+      run: |
+        git --version
+        git config user.name "mrinalpravi"
+        git config user.email "mrinalpr1998@gmail.com"
+        git status
+        git fetch origin main
+        git pull
+        git checkout feature
+        git merge main
+        git push origin feature
+        git status
