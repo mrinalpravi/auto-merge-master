@@ -1,25 +1,23 @@
-name: Merge Master to Feature Branch
-on: 
-  pull_request:
-    branches: [main]
-    types: [closed]
+name: Running Dummy Commands
+
+on:
+  push:
+    branches: [ main ]
+
 jobs:
-  merge-master-back-to-feature-branch:
-    if: github.event.pull_request.merged == true
-    timeout-minutes: 2
+  build-version:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set Git config
+    - name: Git checkout
+      uses: actions/checkout@v2
       with:
-          github_token: ${{secrets.DUMMY_TOKEN}}
+        fetch-depth: '0'
+        github_token: ${{secrets.DUMMY_TOKEN}}
+    - name: git
       run: |
-          git config --local user.email "mrinalpr1998@gmail.com"
-          git config --local user.name "mrinalpravi"
-    - name: Merge master back to Features/RCP
-      run: |
-          git fetch --unshallow
-          git checkout feature
-          git pull
-          git merge --no-ff main -m "Auto-merge main back to feature"
-          git push
+        git --version
+        git config user.name "mrinalpravi"
+        git config user.email "mrinalpr1998@gmail.com"
+        git status
+        git tag
+        git describe
