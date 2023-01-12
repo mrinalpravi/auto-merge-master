@@ -23,4 +23,5 @@ jobs:
         git pull
         git checkout feature
         git merge main
+        git push origin feature
         git status
