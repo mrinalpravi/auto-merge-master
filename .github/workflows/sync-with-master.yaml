@@ -20,5 +20,5 @@ jobs:
         git config user.email "mrinalpr1998@gmail.com"
         git status
         git checkout feature
-        git merge master
+        git merge main
         git status
